@@ -24,5 +24,24 @@ _transform: true
 # can be listed in the top-level as an array of objects:
 
 services:
-- name: my-kong-service
+- name: word-meaning
   url: http://localhost:5000/
+  # Entities can store tags as metadata
+routes:
+  - name: route-to-word-meaning
+    service: word-meaning
+    paths:
+    - /meaning
+plugins:
+  - name: key-auth
+    route:  route-to-word-meaning
+    enabled: true
+    config:
+      key_claim_name: kid
+      claims_to_verify: 
+        - exp
+consumers:
+  - username: vishal
+jwt_secrets:
+  - consumer: vishal
+    secret: "yMJ1ukgl1cXpizVI17x5FVJ3oLtpoR8k"
