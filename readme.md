@@ -1,13 +1,7 @@
-# Backend Assignment - Github Externship
-* [Video Fetcher](https://videofetcher.herokuapp.com/) <br>
+# Kong Plugin For QoS (Quality Of Service) - Github Externship
 
 ## Project Goal
-To make an API to fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
-
-## Requirements
-1. Server should call the YouTube API continuously in background with some interval for fetching the latest videos for a predefined search query and should store the data of videos in a database with proper indexes.
-2. A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
-3. It should be scalable and optimised.
+To integrate a simple Kong Plugin with Flask API. 
 
 ## Technologies used
 1. Flask
@@ -41,13 +35,12 @@ ALTER USER kong WITH PASSWORD 'password';
 ```bash
 python3 app.py
 ```
-* Run Kong using
+* Run Kong
 ```
 sudo kong start -c path/to/kong.config
 ```
 
-* Stop kong using
-
+* Stop kong
 ```
 sudo kong stop
 ```
