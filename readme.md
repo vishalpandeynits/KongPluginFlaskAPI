@@ -76,26 +76,25 @@ Sample Response
 
 ## Step by step procedure image
 
-1. Adding word-meaning service which is a flask app deployed at posrt 5000.
+1. Added Flask API services to the kong API gateway, by sending service name and url to kong system’s URL which is running at localhost:8001
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/1.png)
 
-2. Adding routes to the service created previously ar path `meaning`
+2. Now added the route which will redirect users to our Flask service.
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/2.png)
 
-3. Adding Authentication key plugin `api-key` which must be suppplied in header of the request by the users.
+3. Authentication key plugin api-key added, It must be supplied in the header of the request by the users for a successful redirection.
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/3.png)
 
-4. If Authentication key is not suppplied, these types of error will be raised.
-![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/4.png)
+4. In case the authentication key is not supplied in the request and if these APIs are called then they will raise errors.
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/5.png)
 
 5. If wrong authentication key is provided , then this error will be raised.
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/6.png)
 
-6. Creating a consumer who can utilise API keys to send request to our server.
+6. Created a consumer who will use our Flask API through the kong API gateway. 
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/8.png)
 
-7. And at last our API system is running through the Kong API Gateway management.
+7. The user has been created and its api key is retrieved and passed into the header. It will call our flask API through the endpoints exposed by Kong. And now we can use our APIs successfully.
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/9.png)
 ![Alt text](https://github.com/vishalpandeyvip/KongPluginFlaskAPI/blob/main/screenshots/10.png)
 
